@@ -43,18 +43,15 @@ CREATE TABLE titles (
   PRIMARY KEY (title)
 );
 
-SELECT * FROM departments;
-
 CREATE TABLE dept_emp(
   emp_no INT NOT NULL,
-  dept_no VARCHAR (4) NOT NULL
+  dept_no VARCHAR (4) NOT NULL,
   from_date DATE NOT NULL,
   to_date DATE NOT NULL,
   FOREIGN KEY (emp_no) REFERENCES employees (emp_no),
   FOREIGN KEY (dept_no) REFERENCES departments (dept_no),
-  FOREIGN KEY (from_date) REFERENCES salaries (from_date)
-  FOREIGN KEY (to_date) REFERENCES salaries (to_date)
   PRIMARY KEY (emp_no, dept_no)
 );
 
+SELECT * FROM departments;
 
